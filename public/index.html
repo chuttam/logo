@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Logo Interpreter</title>
+<title>Try Logo</title>
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <link rel="alternate" type="application/atom+xml" href="http://code.google.com/feeds/p/jslogo/gitchanges/basic">
 
@@ -17,13 +17,7 @@
 
 
 <div id="title">
-<h1>Logo Interpreter</h1>
-<p>
-By <a href="mailto:inexorabletash@gmail.com">Joshua Bell</a>
-| <a target="_blank" href="tests.htm">Unit Tests</a>
-| <a target="_blank" href="http://code.google.com/p/jslogo">Source</a>
-| <a target="_blank" href="http://code.google.com/p/jslogo/source/list">Changes</a>
-</p>
+  <h3>Try Logo</h3>
 </div>
 
 <div id="display">
@@ -72,32 +66,11 @@ window pu repeat 72 [ setlabelheight repcount fd repcount * 2.5 label &quot;Logo
 </ul>
 </div>
 
-<div id="todo">
-<h2>To Do</h2>
-<ul>
-    <li>Document deviations from UCB Logo standard
-    <li>Make these examples all work: <a href="http://www.mathcats.com/gallery/15wordcontest.html">Logo 15-word challenge</a>
-    <li>Use <a href="http://www.whatwg.org/specs/web-workers/current-work/">Web Workers</a>, so you can see the turtle moving in long-duration programs
-    <li>Efficient tail-end recursion
-</ul>
-</div>
-
 <div id="guide">
 <a id="toggle_link" href="#" onclick="var gb = document.getElementById('guide_body'); var show = (gb.style.display === 'none'); gb.style.display = show ? '' : 'none'; this.innerHTML = show ? 'hide' : 'show'; return false;">hide</a>
 <h2>Language Reference</h2>
-<iframe frameBorder="0" src="language.htm" id="guide_body"></iframe>
+<!-- <iframe frameBorder="0" src="language.htm" id="guide_body"></iframe> -->
 </div>
 
-<script type="text/javascript">
-  var _gaq = _gaq || [];
-  _gaq.push(['_setAccount', 'UA-18610679-3']);
-  _gaq.push(['_trackPageview']);
-
-  (function() {
-    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-  })();
-</script>
 </body>
 </html>
