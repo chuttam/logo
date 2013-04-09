@@ -72,3 +72,11 @@ code { font-family: monospace; }
 #entry_multi {
     width: 660px; height: 200px; font-family: monospace;
 }
+
+ol {
+    
+}
+
+td {
+    font-size: 12px;
+}
