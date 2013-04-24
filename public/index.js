@@ -22,31 +22,9 @@ var g_history = [];
 var g_historypos = -1;
 
 var g_entry;
-var g_multi = false;
 
-function ontoggle() {
-  var single = document.getElementById('entry_single');
-  var multi = document.getElementById('entry_multi');
-  var toggle = document.getElementById('toggle');
-
-  g_multi = !g_multi;
-  if (!g_multi) {
-    g_entry = single;
-
-    single.style.display = '';
-    multi.style.display = 'none';
-
-    single.value = multi.value;
-    toggle.value = "+";
-  } else {
-    g_entry = multi;
-
-    single.style.display = 'none';
-    multi.style.display = '';
-
-    multi.value = single.value;
-    toggle.value = "-";
-  }
+function loadCommandBox() {
+  g_entry = document.getElementById('entry_multi');
 }
 
 
@@ -54,13 +32,6 @@ function onenter() {
   var e = g_entry;
   var v = g_entry.value;
   if (v !== '') {
-
-    if (!g_multi) {
-      e.value = '';
-      g_history.push(v);
-      g_historypos = -1;
-    }
-
     try {
       g_logo.run(v);
     } catch (e) {
@@ -85,47 +56,47 @@ function onkey(e) {
 
   var consume = false;
 
-  switch (e.keyCode) {
-    case KEY.RETURN:
-    case KEY.ENTER:
-      onenter();
-      consume = true;
-      break;
+  // switch (e.keyCode) {
+  //   case KEY.RETURN:
+  //   case KEY.ENTER:
+  //     onenter();
+  //     consume = true;
+  //     break;
 
-    case KEY.UP:
-      if (g_history.length > 0) {
-        if (g_historypos === -1) {
-          g_historypos = g_history.length - 1;
-        } else {
-          g_historypos = (g_historypos === 0) ? g_history.length - 1 : g_historypos - 1;
-        }
-        document.getElementById('entry_single').value = g_history[g_historypos];
-      }
-      consume = true;
-      break;
+  //   case KEY.UP:
+  //     if (g_history.length > 0) {
+  //       if (g_historypos === -1) {
+  //         g_historypos = g_history.length - 1;
+  //       } else {
+  //         g_historypos = (g_historypos === 0) ? g_history.length - 1 : g_historypos - 1;
+  //       }
+  //       document.getElementById('entry_single').value = g_history[g_historypos];
+  //     }
+  //     consume = true;
+  //     break;
 
-    case KEY.DOWN:
-      if (g_history.length > 0) {
-        if (g_historypos === -1) {
-          g_historypos = 0;
-        } else {
-          g_historypos = (g_historypos === g_history.length - 1) ? 0 : g_historypos + 1;
-        }
-        document.getElementById('entry_single').value = g_history[g_historypos];
-      }
-      consume = true;
-      break;
-  }
+  //   case KEY.DOWN:
+  //     if (g_history.length > 0) {
+  //       if (g_historypos === -1) {
+  //         g_historypos = 0;
+  //       } else {
+  //         g_historypos = (g_historypos === g_history.length - 1) ? 0 : g_historypos + 1;
+  //       }
+  //       document.getElementById('entry_single').value = g_history[g_historypos];
+  //     }
+  //     consume = true;
+  //     break;
+  // }
 
-  if (consume) {
-    e.cancelBubble = true; // IE
-    e.returnValue = false;
-    if (e.stopPropagation) { e.stopPropagation(); } // W3C
-    if (e.preventDefault) { e.preventDefault(); } // e.g. to block arrows from scrolling the page
-    return false;
-  } else {
-    return true;
-  }
+  // if (consume) {
+  //   e.cancelBubble = true; // IE
+  //   e.returnValue = false;
+  //   if (e.stopPropagation) { e.stopPropagation(); } // W3C
+  //   if (e.preventDefault) { e.preventDefault(); } // e.g. to block arrows from scrolling the page
+  //   return false;
+  // } else {
+  //   return true;
+  // }
 }
 
 var savehook;
@@ -199,12 +170,13 @@ window.onload = function() {
     g_logo.run(def);
   });
 
-  document.getElementById('toggle').onclick = ontoggle;
+  loadCommandBox();
+
   document.getElementById('run').onclick = onenter;
 
-  g_entry = document.getElementById('entry_single');
+  g_entry = document.getElementById('entry_multi');
   g_entry.onkeydown = onkey;
-  g_entry.focus();
+  g_entry.focus();  
 
   function demo(param) {
     param = String(param);

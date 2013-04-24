@@ -65,10 +65,6 @@ code { font-family: monospace; }
     width: 760px; padding: 0; padding-top: 5px;
 }
 
-#entry_single {
-    width: 660px; font-family: monospace;
-}
-
 #entry_multi {
     width: 660px; height: 200px; font-family: monospace;
 }
