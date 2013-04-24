@@ -62,11 +62,12 @@ code { font-family: monospace; }
 /* User Input */
 
 #input {
-    width: 760px; padding: 0; padding-top: 5px;
+    width: 560px;
 }
 
 #entry_multi {
-    width: 660px; height: 200px; font-family: monospace;
+    width: 560px; height: 300px; font-family: monospace;
+    margin-left: 15px;
 }
 
 ol {

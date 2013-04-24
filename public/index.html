@@ -20,19 +20,22 @@
   <h3>Try Logo</h3>
 </div>
 
-<div id="display">
-    <canvas id="sandbox" width="760" height="480">
-        <span>Your browser does not support the canvas element - sorry!</span>
-    </canvas>
-    <canvas id="turtle" width="760" height="480"></canvas>
-    <div id="overlay"></div>
-</div>
+<div style="float: left">
+  <div id="display" style="float: left">
+      <canvas id="sandbox" width="760" height="480">
+          <span>Your browser does not support the canvas element - sorry!</span>
+      </canvas>
+      <canvas id="turtle" width="760" height="480"></canvas>
+      <div id="overlay"></div>
+  </div>
 
-<div id="input">
-    <textarea rows="20" cols="80" id="entry_multi"></textarea>
-    <input id="run" type="button" value="run" title="Run the specified statements" />
+  <div id="input" style="float: right">
+      <textarea rows="20" cols="80" id="entry_multi"></textarea>
+      <div style="float: right"><input id="run" type="button" value="run" title="Run the specified statements" /></div>
+  </div>
 </div>
 <br/><br/>
+<div id="command-reference">
 <h3>Command Reference</h3>
 <table BORDER CELLSPACING=0>
     <tr>
@@ -353,7 +356,8 @@
       <td>
         &nbsp;
       </td>
-  </table>
+</table>
+</div>
 <br/>
 <div id="examples">
     <h3>Examples</h3>
