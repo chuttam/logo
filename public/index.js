@@ -165,10 +165,10 @@ window.onload = function() {
       if (savehook) {
         savehook(name, def);
       }
-      g_logo.run(def);
+      // g_logo.run(def);
     });
   // initStorage(function (def) {
-    // g_logo.run(def);
+    g_logo.run('');
   // });
 
   loadCommandBox();
