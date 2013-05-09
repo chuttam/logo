@@ -1,4 +1,4 @@
-square
+to square
 repeat 4 [forward 100 right 90]
 end
 
