@@ -60,12 +60,13 @@ code { font-family: monospace; }
 }
 
 #input {
-    width: 560px;
+    width: 440px;
 }
 
 #entry_multi {
-    width: 560px; height: 300px; font-family: monospace;
+    width: 440px; height: 300px; font-family: monospace;
     margin-left: 15px;
+    padding: 10px;
 }
 
 #run {
